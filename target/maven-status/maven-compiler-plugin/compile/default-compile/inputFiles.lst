@@ -2,6 +2,7 @@
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/detection/PhishTankDetectionService.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/detection/DynamicWhitelistManager.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/ComprehensiveMalwareDetectionService.java
+/Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/controller/HealthController.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/model/UrlScanResult.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/repository/UrlScanRequestRepository.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/MalwareScanService.java
@@ -13,7 +14,9 @@
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/detection/DomainReputationService.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/detection/DomainWhitelistService.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/detection/UrlPatternDetectionService.java
+/Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/detection/EnhancedContentAnalyzerService.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/detection/GoogleSafeBrowsingService.java
+/Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/detection/ExternalMlDetectionService.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/detection/DynamicContentAnalyzerService.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/service/detection/ContentAnalysisService.java
 /Users/bootnext-55/Downloads/malicious-url-detector 2/src/main/java/com/example/malwaredetector/model/UrlScanRequest.java

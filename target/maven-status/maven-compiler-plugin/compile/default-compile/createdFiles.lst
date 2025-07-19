@@ -2,13 +2,16 @@ com/example/malwaredetector/service/detection/UrlPatternDetectionService.class
 com/example/malwaredetector/service/detection/DomainWhitelistService.class
 com/example/malwaredetector/service/detection/DomainReputationService.class
 com/example/malwaredetector/service/detection/GoogleSafeBrowsingService.class
+com/example/malwaredetector/service/detection/EnhancedContentAnalyzerService$ContentAnalysisResult.class
 com/example/malwaredetector/service/detection/MlMicroserviceDetectionService.class
 com/example/malwaredetector/service/detection/DynamicContentAnalyzerService.class
+com/example/malwaredetector/service/detection/ExternalMlDetectionService.class
 com/example/malwaredetector/service/detection/PhishTankDetectionService.class
 com/example/malwaredetector/service/detection/DynamicWhitelistManager$DomainReputation.class
 com/example/malwaredetector/service/detection/BaseDetectionService.class
 com/example/malwaredetector/service/detection/ContentAnalysisService.class
 com/example/malwaredetector/MalwareDetectorApplication.class
+com/example/malwaredetector/controller/HealthController.class
 com/example/malwaredetector/model/UrlScanResult.class
 com/example/malwaredetector/service/detection/VirusTotalDetectionService.class
 com/example/malwaredetector/service/MalwareScanService.class
@@ -18,5 +21,6 @@ com/example/malwaredetector/service/detection/SmileMlDetectionService.class
 com/example/malwaredetector/service/detection/DynamicWhitelistManager.class
 com/example/malwaredetector/model/UrlScanResult$DetectionResult.class
 com/example/malwaredetector/repository/UrlScanRequestRepository.class
+com/example/malwaredetector/service/detection/EnhancedContentAnalyzerService.class
 com/example/malwaredetector/service/detection/TransformerMLDetectionService.class
 com/example/malwaredetector/controller/MalwareScanController.class
