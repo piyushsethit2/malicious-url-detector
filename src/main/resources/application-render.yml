@@ -27,6 +27,7 @@ ml:
       enabled: true
       api-url: https://api-inference.huggingface.co/models
       model-name: microsoft/DialoGPT-medium
+      api-key: ${HUGGINGFACE_API_KEY:}  # Optional API key
   # Disable local ML microservice for Render
   microservice:
     enabled: false
