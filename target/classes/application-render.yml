@@ -18,6 +18,13 @@ spring:
       ddl-auto: create-drop
     show-sql: false
     open-in-view: false  # Disable OSIV for better performance
+  main:
+    lazy-initialization: true  # Defer bean creation for faster startup
+  logging:
+    level:
+      com.example.malwaredetector: INFO
+      org.springframework.web: WARN
+      org.hibernate: WARN
 
 # External ML API configuration
 ml:
@@ -28,46 +35,39 @@ ml:
       api-url: https://api-inference.huggingface.co/models
       model-name: microsoft/DialoGPT-medium
       api-key: ${HUGGINGFACE_API_KEY:}  # Optional API key
-  # Disable local ML microservice for Render
+  # Deployed microservices on Render
   microservice:
-    enabled: false
-    url: http://localhost:5002
-    timeout: 5
+    enabled: true
+    url: ${ML_MICROSERVICE_URL:https://ml-microservice-1.onrender.com}
+    timeout: 10000
+  python-microservice:
+    enabled: true
+    url: ${PYTHON_MICROSERVICE_URL:https://ml-microservice-2.onrender.com}
+    timeout: 10000
+  ml-microservice:
+    enabled: true
+    url: ${ML_MICROSERVICE_3_URL:https://ml-microservice-3.onrender.com}
+    timeout: 10000
 
-# Disable heavy services for Render
-services:
-  dynamic-content-analyzer:
-    enabled: false
-  virus-total:
-    enabled: false
-  google-safe-browsing:
-    enabled: false
-  phish-tank:
-    enabled: false
+# Disable heavy services that require API keys
+virus-total:
+  enabled: false
+  api-key: ${VIRUSTOTAL_API_KEY:}
 
-# Logging configuration for Render
-logging:
-  level:
-    com.example.malwaredetector: INFO
-    org.springframework.web: WARN
-    org.hibernate: WARN
-    org.springframework.boot.autoconfigure: WARN
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+google-safe-browsing:
+  enabled: false
+  api-key: ${GOOGLE_SAFEBROWSING_API_KEY:}
 
-# Management endpoints for health checks - simplified
+phish-tank:
+  enabled: false
+
+# Actuator configuration for health checks
 management:
   endpoints:
     web:
       exposure:
-        include: health
-      base-path: /actuator
+        include: health,info
   endpoint:
     health:
-      show-details: when-authorized
-  health:
-    defaults:
-      enabled: true
-
-# Optimize startup time
-spring.main.lazy-initialization: true 
+      show-details: always
+      show-components: always 

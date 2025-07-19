@@ -1,4 +1,5 @@
 services:
+  # Main Spring Boot application
   - type: web
     name: malicious-url-detector
     env: docker
@@ -14,4 +15,46 @@ services:
         value: 8080
       - key: ML_API_ENABLED
         value: true
+    autoDeploy: true
+
+  # Python ML Microservice 1
+  - type: web
+    name: ml-microservice-1
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python ml_microservice.py
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: HF_MODEL_NAME
+        value: distilbert-base-uncased
+    autoDeploy: true
+
+  # Python ML Microservice 2
+  - type: web
+    name: ml-microservice-2
+    env: python
+    plan: free
+    buildCommand: cd python_microservice && pip install -r requirements.txt
+    startCommand: cd python_microservice && python ml_microservice.py
+    envVars:
+      - key: PORT
+        value: 5001
+      - key: HF_MODEL_NAME
+        value: distilbert-base-uncased
+    autoDeploy: true
+
+  # Python ML Microservice 3
+  - type: web
+    name: ml-microservice-3
+    env: python
+    plan: free
+    buildCommand: cd ml_microservice && pip install -r requirements.txt
+    startCommand: cd ml_microservice && python app.py
+    envVars:
+      - key: PORT
+        value: 5002
+      - key: HF_MODEL_NAME
+        value: distilbert-base-uncased
     autoDeploy: true 
