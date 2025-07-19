@@ -6,9 +6,31 @@ malicious-url-detector/
 ├── src/                    # Java Spring Boot application
 ├── repositories/           # Python microservices ready for separation
 │   ├── python-ml-microservice/
+│   │   ├── ml_microservice.py    # Original code
+│   │   ├── requirements.txt      # Dependencies
+│   │   ├── Dockerfile           # Docker configuration
+│   │   ├── .dockerignore        # Docker ignore rules
+│   │   ├── render.yaml          # Render config (Docker)
+│   │   └── README.md            # Documentation
 │   ├── python-app-microservice/
+│   │   ├── app.py               # Original code
+│   │   ├── config.py            # Original code
+│   │   ├── model_manager.py     # Original code
+│   │   ├── __init__.py          # Original code
+│   │   ├── requirements.txt     # Dependencies
+│   │   ├── Dockerfile           # Docker configuration
+│   │   ├── .dockerignore        # Docker ignore rules
+│   │   ├── render.yaml          # Render config (Docker)
+│   │   └── README.md            # Documentation
 │   └── ml-microservice/
-└── render.yaml            # Main app only
+│       ├── app.py               # Original code
+│       ├── requirements.txt     # Dependencies
+│       ├── Dockerfile           # Docker configuration
+│       ├── .dockerignore        # Docker ignore rules
+│       ├── render.yaml          # Render config (Docker)
+│       └── README.md            # Documentation
+├── render.yaml            # Main app only (cleaned)
+└── CLEAN_SEPARATION_GUIDE.md  # This guide
 ```
 
 ## Step 1: Create GitHub Repositories
@@ -56,7 +78,7 @@ git push -u origin main
 1. Go to [Render Dashboard](https://render.com/dashboard)
 2. Click "New +" → "Web Service"
 3. Connect each GitHub repository
-4. Render will auto-detect the `render.yaml` files
+4. Render will auto-detect the `render.yaml` files and use Docker
 
 ### 3.2 Expected URLs:
 - `https://python-ml-microservice.onrender.com` (Port 5002)
@@ -76,8 +98,23 @@ rm -rf ml_microservice/
 rm requirements.txt
 ```
 
+## Docker Benefits
+
+### ✅ Why Docker for Each Microservice:
+- **Consistent Environment**: Same Python 3.9.18 across all deployments
+- **Isolation**: Each service runs in its own container
+- **Portability**: Easy to deploy anywhere (Render, AWS, GCP, etc.)
+- **Dependencies**: All dependencies bundled in container
+- **Version Control**: Exact Python and package versions
+
+### ✅ Docker Features:
+- **Multi-stage builds**: Optimized for production
+- **Security**: Non-root user execution
+- **Caching**: Faster builds with layer caching
+- **Health checks**: Built-in container health monitoring
+
 ## Result: 4 Independent Repositories
 1. `malicious-url-detector` - Java Spring Boot (Port 8080)
-2. `python-ml-microservice` - Python ML (Port 5002)
-3. `python-app-microservice` - Python App (Port 5000)
-4. `ml-microservice` - Simple ML (Port 5001) 
+2. `python-ml-microservice` - Python ML (Port 5002) - Docker
+3. `python-app-microservice` - Python App (Port 5000) - Docker
+4. `ml-microservice` - Simple ML (Port 5001) - Docker 
