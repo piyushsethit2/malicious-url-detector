@@ -15,4 +15,10 @@ services:
         value: 8080
       - key: ML_API_ENABLED
         value: true
+      - key: ML_MICROSERVICE_URL
+        value: https://python-ml-microservice.onrender.com
+      - key: PYTHON_MICROSERVICE_URL
+        value: https://python-app-microservice.onrender.com
+      - key: ML_MICROSERVICE_3_URL
+        value: https://ml-microservice-nn4p.onrender.com
     autoDeploy: true 
