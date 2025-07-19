@@ -17,13 +17,27 @@ services:
         value: true
     autoDeploy: true
 
-  # Python ML Microservice 1
+  # Python ML Microservice (from python_microservice/ml_microservice.py) - Port 5002
   - type: web
-    name: ml-microservice-1
+    name: python-ml-microservice
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python ml_microservice.py
+    buildCommand: cd python_microservice && pip install -r requirements.txt
+    startCommand: cd python_microservice && python ml_microservice.py
+    envVars:
+      - key: PORT
+        value: 5002
+      - key: HF_MODEL_NAME
+        value: distilbert-base-uncased
+    autoDeploy: true
+
+  # Python App Microservice (from python_microservice/app.py) - Uses config
+  - type: web
+    name: python-app-microservice
+    env: python
+    plan: free
+    buildCommand: cd python_microservice && pip install -r requirements.txt
+    startCommand: cd python_microservice && python app.py
     envVars:
       - key: PORT
         value: 5000
@@ -31,30 +45,16 @@ services:
         value: distilbert-base-uncased
     autoDeploy: true
 
-  # Python ML Microservice 2
+  # ML Microservice (from ml_microservice/app.py) - Port 5001
   - type: web
-    name: ml-microservice-2
-    env: python
-    plan: free
-    buildCommand: cd python_microservice && pip install -r requirements.txt
-    startCommand: cd python_microservice && python ml_microservice.py
-    envVars:
-      - key: PORT
-        value: 5001
-      - key: HF_MODEL_NAME
-        value: distilbert-base-uncased
-    autoDeploy: true
-
-  # Python ML Microservice 3
-  - type: web
-    name: ml-microservice-3
+    name: ml-microservice
     env: python
     plan: free
     buildCommand: cd ml_microservice && pip install -r requirements.txt
     startCommand: cd ml_microservice && python app.py
     envVars:
       - key: PORT
-        value: 5002
+        value: 5001
       - key: HF_MODEL_NAME
         value: distilbert-base-uncased
     autoDeploy: true 

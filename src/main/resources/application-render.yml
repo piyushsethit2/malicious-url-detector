@@ -38,15 +38,15 @@ ml:
   # Deployed microservices on Render
   microservice:
     enabled: true
-    url: ${ML_MICROSERVICE_URL:https://ml-microservice-1.onrender.com}
+    url: ${ML_MICROSERVICE_URL:https://python-ml-microservice.onrender.com}
     timeout: 10000
   python-microservice:
     enabled: true
-    url: ${PYTHON_MICROSERVICE_URL:https://ml-microservice-2.onrender.com}
+    url: ${PYTHON_MICROSERVICE_URL:https://python-app-microservice.onrender.com}
     timeout: 10000
   ml-microservice:
     enabled: true
-    url: ${ML_MICROSERVICE_3_URL:https://ml-microservice-3.onrender.com}
+    url: ${ML_MICROSERVICE_3_URL:https://ml-microservice.onrender.com}
     timeout: 10000
 
 # Disable heavy services that require API keys
