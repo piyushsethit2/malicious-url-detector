@@ -12,5 +12,5 @@ services:
       - key: HF_MODEL_NAME
         value: distilbert-base-uncased
       - key: PYTHON_VERSION
-        value: 3.9
+        value: 3.9.18
     autoDeploy: true 

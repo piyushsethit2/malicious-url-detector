@@ -31,7 +31,7 @@ services:
       - key: HF_MODEL_NAME
         value: distilbert-base-uncased
       - key: PYTHON_VERSION
-        value: 3.9
+        value: 3.9.18
     autoDeploy: true
 
   # Python App Microservice (from python_microservice/app.py) - Uses config
@@ -48,7 +48,7 @@ services:
       - key: HF_MODEL_NAME
         value: distilbert-base-uncased
       - key: PYTHON_VERSION
-        value: 3.9
+        value: 3.9.18
     autoDeploy: true
 
   # ML Microservice (from ml_microservice/app.py) - Port 5001
@@ -65,5 +65,5 @@ services:
       - key: HF_MODEL_NAME
         value: distilbert-base-uncased
       - key: PYTHON_VERSION
-        value: 3.9
+        value: 3.9.18
     autoDeploy: true 
