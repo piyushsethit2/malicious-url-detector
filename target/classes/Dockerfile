@@ -1,4 +1,5 @@
 # Multi-stage build optimized for Render
+# Build timestamp: 2025-07-19 13:38:00 UTC
 FROM maven:3.9.6-eclipse-temurin-21-alpine AS build
 
 # Set the working directory
@@ -10,7 +11,7 @@ COPY pom.xml .
 # Download dependencies (this layer will be cached if pom.xml doesn't change)
 RUN mvn dependency:go-offline -B
 
-# Copy source code
+# Copy source code and configuration files
 COPY src ./src
 
 # Build the application with optimizations
