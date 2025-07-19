@@ -1,0 +1,169 @@
+{
+  "timestamp": "2025-07-14T15:07:41.291337",
+  "ml_microservice_results": [
+    {
+      "url": "https://www.google.com",
+      "label": "safe",
+      "confidence": 0.5063521862030029,
+      "model": "distilbert-base-uncased",
+      "status": "success"
+    },
+    {
+      "url": "https://www.facebook.com",
+      "label": "safe",
+      "confidence": 0.5056318044662476,
+      "model": "distilbert-base-uncased",
+      "status": "success"
+    },
+    {
+      "url": "http://malware-test.com",
+      "label": "malicious",
+      "confidence": 0.5190346837043762,
+      "model": "distilbert-base-uncased",
+      "status": "success"
+    },
+    {
+      "url": "http://phishing-scam.net",
+      "label": "malicious",
+      "confidence": 0.5104228854179382,
+      "model": "distilbert-base-uncased",
+      "status": "success"
+    },
+    {
+      "url": "https://www.amazon.com",
+      "label": "safe",
+      "confidence": 0.5041690468788147,
+      "model": "distilbert-base-uncased",
+      "status": "success"
+    },
+    {
+      "url": "http://virus-download.xyz",
+      "label": "malicious",
+      "confidence": 0.5192112922668457,
+      "model": "distilbert-base-uncased",
+      "status": "success"
+    }
+  ],
+  "java_integration_results": [
+    {
+      "url": "https://www.google.com",
+      "malicious": false,
+      "confidence": 0.1441882174281556,
+      "status": "CLEAN",
+      "sources": [
+        "Google Safe Browsing",
+        "Content Analysis",
+        "ML Microservice",
+        "Dynamic Content Analysis",
+        "PhishTank",
+        "TransformerML",
+        "Domain Reputation Analysis",
+        "Java ML Detection",
+        "VirusTotal",
+        "URL Pattern Analysis"
+      ],
+      "java_status": "success"
+    },
+    {
+      "url": "https://www.facebook.com",
+      "malicious": false,
+      "confidence": 0.1341514376749243,
+      "status": "CLEAN",
+      "sources": [
+        "Google Safe Browsing",
+        "Content Analysis",
+        "ML Microservice",
+        "Dynamic Content Analysis",
+        "PhishTank",
+        "TransformerML",
+        "Domain Reputation Analysis",
+        "Java ML Detection",
+        "VirusTotal",
+        "URL Pattern Analysis"
+      ],
+      "java_status": "success"
+    },
+    {
+      "url": "http://malware-test.com",
+      "malicious": true,
+      "confidence": 0.1885689148226328,
+      "status": "MALICIOUS",
+      "sources": [
+        "Google Safe Browsing",
+        "Content Analysis",
+        "ML Microservice",
+        "Dynamic Content Analysis",
+        "PhishTank",
+        "TransformerML",
+        "Domain Reputation Analysis",
+        "Java ML Detection",
+        "VirusTotal",
+        "URL Pattern Analysis"
+      ],
+      "java_status": "success"
+    },
+    {
+      "url": "http://phishing-scam.net",
+      "malicious": true,
+      "confidence": 0.18304526407375485,
+      "status": "MALICIOUS",
+      "sources": [
+        "Google Safe Browsing",
+        "Content Analysis",
+        "ML Microservice",
+        "Dynamic Content Analysis",
+        "PhishTank",
+        "TransformerML",
+        "Domain Reputation Analysis",
+        "Java ML Detection",
+        "VirusTotal",
+        "URL Pattern Analysis"
+      ],
+      "java_status": "success"
+    },
+    {
+      "url": "https://www.amazon.com",
+      "malicious": false,
+      "confidence": 0.10672731200969444,
+      "status": "CLEAN",
+      "sources": [
+        "Google Safe Browsing",
+        "Content Analysis",
+        "ML Microservice",
+        "Dynamic Content Analysis",
+        "PhishTank",
+        "TransformerML",
+        "Domain Reputation Analysis",
+        "Java ML Detection",
+        "VirusTotal",
+        "URL Pattern Analysis"
+      ],
+      "java_status": "success"
+    },
+    {
+      "url": "http://virus-download.xyz",
+      "malicious": true,
+      "confidence": 0.2105787802815228,
+      "status": "MALICIOUS",
+      "sources": [
+        "Google Safe Browsing",
+        "Content Analysis",
+        "ML Microservice",
+        "Dynamic Content Analysis",
+        "PhishTank",
+        "TransformerML",
+        "Domain Reputation Analysis",
+        "Java ML Detection",
+        "VirusTotal",
+        "URL Pattern Analysis"
+      ],
+      "java_status": "success"
+    }
+  ],
+  "summary": {
+    "ml_tests": 6,
+    "java_tests": 6,
+    "ml_success": 6,
+    "java_success": 6
+  }
+}

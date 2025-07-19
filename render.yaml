@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: malicious-url-detector
+    env: docker
+    plan: free
+    dockerfilePath: ./src/main/resources/Dockerfile
+    dockerContext: .
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: render
+      - key: PORT
+        value: 8080
+      - key: ML_API_ENABLED
+        value: true
+    autoDeploy: true 

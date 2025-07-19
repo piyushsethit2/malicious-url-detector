@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:urlscanner
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+
+google:
+  api:
+    key: YOUR_GOOGLE_SAFE_BROWSING_API_KEY
+
+# Malware detection configuration
+malware:
+  detection:
+    enabled: true
+    timeout: 10000
+    max-redirects: 5
+
+# ML Microservice Configuration
+ml:
+  microservice:
+    url: http://localhost:5002
+    timeout: 10
+    enabled: true

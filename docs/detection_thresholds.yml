@@ -1,0 +1,23 @@
+# Detection thresholds for all detection services
+# Adjust these values to tune sensitivity and specificity
+
+comprehensive:
+  malicious_count: 1           # Number of methods that must flag as malicious (2 if whitelisted)
+  confidence: 0.5              # Average confidence threshold (0.6 if whitelisted)
+
+content_analysis:
+  threshold: 0.3               # Confidence threshold for content analysis (0.5 if whitelisted)
+
+pattern_analysis:
+  threshold: 0.4               # Confidence threshold for URL pattern analysis
+
+smile_ml:
+  threshold: 0.6               # Risk score threshold for Java ML/statistical detection
+
+transformer_ml:
+  threshold: 0.7               # Confidence threshold for ML microservice (label=malicious & confidence > threshold)
+
+dynamic_content:
+  threshold: 0.4               # Confidence threshold for dynamic content analyzer (0.6 if whitelisted)
+
+# To apply: update each service to read from this config instead of hardcoding values. 

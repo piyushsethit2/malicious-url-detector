@@ -1,0 +1,249 @@
+{
+  "test_timestamp": "2025-07-14T14:19:48.994972",
+  "summary": {
+    "safe_urls": {
+      "total": 15,
+      "correct": 0,
+      "false_positives": 15,
+      "false_positive_rate": 100.0
+    },
+    "malicious_urls": {
+      "total": 10,
+      "correct": 0,
+      "false_negatives": 10,
+      "detection_rate": 0.0
+    },
+    "overall": {
+      "total_tests": 25,
+      "correct_classifications": 0,
+      "accuracy": 0.0
+    }
+  },
+  "detailed_results": [
+    {
+      "url": "https://www.google.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.facebook.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.amazon.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.microsoft.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.apple.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.github.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.stackoverflow.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.wikipedia.org",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.paypal.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.ebay.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.netflix.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.youtube.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.linkedin.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.twitter.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "https://www.instagram.com",
+      "expected": "safe",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "http://malware-test.com",
+      "expected": "malicious",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "http://phishing-scam.net",
+      "expected": "malicious",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "http://virus-download.xyz",
+      "expected": "malicious",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "http://hack-crack.tk",
+      "expected": "malicious",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "http://trojan-spyware.ml",
+      "expected": "malicious",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "http://fake-login.ga",
+      "expected": "malicious",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "http://malicious-software.cf",
+      "expected": "malicious",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "http://scam-website.gq",
+      "expected": "malicious",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "http://fake-banking.top",
+      "expected": "malicious",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    },
+    {
+      "url": "http://malware-download.club",
+      "expected": "malicious",
+      "detected_malicious": null,
+      "confidence": null,
+      "status": "HTTP 400",
+      "correct": false,
+      "success": false
+    }
+  ]
+}

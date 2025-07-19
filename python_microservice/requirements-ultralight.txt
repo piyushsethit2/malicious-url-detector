@@ -1,0 +1,7 @@
+# Ultra-lightweight requirements for maximum size reduction
+flask==2.3.3
+requests==2.31.0
+python-dotenv==1.0.0
+
+# Use a simple ML approach instead of heavy transformers
+# This will be much smaller but still functional 

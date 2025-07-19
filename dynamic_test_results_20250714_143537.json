@@ -1,0 +1,295 @@
+{
+  "test_timestamp": "2025-07-14T14:35:37.019656",
+  "summary": {
+    "safe_urls": {
+      "total": 15,
+      "correct": 14,
+      "false_positives": 1,
+      "false_positive_rate": 6.666666666666667
+    },
+    "malicious_urls": {
+      "total": 15,
+      "correct": 15,
+      "false_negatives": 0,
+      "detection_rate": 100.0
+    },
+    "overall": {
+      "total_tests": 30,
+      "correct_classifications": 29,
+      "accuracy": 96.66666666666667
+    }
+  },
+  "detailed_results": [
+    {
+      "url": "https://www.google.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.06375228873136195,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.facebook.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.051489165968708756,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.amazon.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.018821054840987048,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.microsoft.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.02979875735304955,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.apple.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.0290419720701461,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.github.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.008996980363172395,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.stackoverflow.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.009210065125458827,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.wikipedia.org",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.05153090519330859,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.paypal.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.007154290543653406,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.ebay.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.04202494886668008,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.netflix.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.008655235100045865,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.youtube.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.08438195373625752,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.linkedin.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.03136603127742474,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.twitter.com",
+      "expected": "safe",
+      "detected_malicious": false,
+      "confidence": 0.007123112830939221,
+      "status": "CLEAN",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "https://www.instagram.com",
+      "expected": "safe",
+      "detected_malicious": true,
+      "confidence": 0.16058906730338263,
+      "status": "MALICIOUS",
+      "correct": false,
+      "success": true
+    },
+    {
+      "url": "http://malware-test.com",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.10885985594915765,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://phishing-scam.net",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.10859735714041355,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://virus-download.xyz",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.14408066204980338,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://hack-crack.tk",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.15866008756672936,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://trojan-spyware.ml",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.14750015396793678,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://fake-login.ga",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.16614016679866492,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://malicious-software.cf",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.12256385548295722,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://scam-website.gq",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.15243565178267848,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://fake-banking.top",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.16493136959084045,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://malware-download.club",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.14868835428977137,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://phishing-scam.net",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.11636627007538151,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://malware-download.xyz",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.1465890397142361,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://fake-paypal-login.com",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.1743512795704921,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://virus-download.tk",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.1405611496298793,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    },
+    {
+      "url": "http://hack-tools.ml",
+      "expected": "malicious",
+      "detected_malicious": true,
+      "confidence": 0.1383396197100387,
+      "status": "MALICIOUS",
+      "correct": true,
+      "success": true
+    }
+  ],
+  "feedback_provided": 1
+}

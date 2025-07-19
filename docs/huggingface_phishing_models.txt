@@ -1,0 +1,25 @@
+# HuggingFace Models for Phishing/Malicious URL Detection
+
+1. ealvaradob/bert-finetuned-phishing
+   https://huggingface.co/ealvaradob/bert-finetuned-phishing
+   - BERT fine-tuned for phishing detection (URLs, emails, SMS, websites). High accuracy, low false positive rate.
+
+2. imanoop7/bert-phishing-detector
+   https://huggingface.co/imanoop7/bert-phishing-detector
+   - BERT fine-tuned for phishing URL classification. Binary safe/phishing output.
+
+3. shawhin/bert-phishing-classifier_teacher
+   https://huggingface.co/shawhin/bert-phishing-classifier_teacher
+   - BERT fine-tuned for phishing detection (teacher model). Good for transfer learning.
+
+4. AcuteShrewdSecurity/Llama-Phishsense-1B
+   https://huggingface.co/AcuteShrewdSecurity/Llama-Phishsense-1B
+   - Llama-based, LoRA-finetuned for phishing detection (emails, URLs). High F1-score, efficient.
+
+5. distilbert-base-uncased
+   https://huggingface.co/distilbert-base-uncased
+   - General-purpose DistilBERT. Used as fallback or for custom fine-tuning.
+
+# To use a model, set the HF_MODEL_NAME environment variable before starting the Python microservice.
+# Example:
+#   HF_MODEL_NAME=ealvaradob/bert-finetuned-phishing python3 ml_microservice.py 

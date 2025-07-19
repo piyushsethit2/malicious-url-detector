@@ -1,0 +1,98 @@
+# Expanded Test Cases for Malicious URL Detection
+
+## Safe URLs
+https://www.google.com
+https://www.facebook.com
+https://www.amazon.com
+https://www.microsoft.com
+https://www.apple.com
+https://www.github.com
+https://www.stackoverflow.com
+https://www.wikipedia.org
+https://www.paypal.com
+https://www.ebay.com
+https://www.netflix.com
+https://www.youtube.com
+https://www.linkedin.com
+https://www.twitter.com
+https://www.instagram.com
+https://www.example.com
+https://subdomain.safe-site.com
+https://www.gov.uk
+https://www.nhs.uk
+https://www.edu.org
+
+## Malicious URLs
+http://malware-test.com
+http://phishing-scam.net
+http://virus-download.xyz
+http://hack-crack.tk
+http://trojan-spyware.ml
+http://fake-login.ga
+http://malicious-software.cf
+http://scam-website.gq
+http://fake-banking.top
+http://malware-download.club
+http://phishing-scam.net
+http://malware-download.xyz
+http://fake-paypal-login.com
+http://virus-download.tk
+http://hack-tools.ml
+http://paypal-secure-login.com
+http://google-secure-update.com
+http://appleid-verify-alert.com
+http://microsoft-support-alert.com
+http://bit.ly/2malware
+http://tinyurl.com/phishingtest
+http://goo.gl/viruslink
+http://t.co/fakeupdate
+http://is.gd/stealinfo
+http://v.gd/spywaretest
+http://cli.gs/credentialharvest
+http://ow.ly/fakebank
+http://su.pr/phishingsite
+http://twurl.nl/malicious
+http://snipurl.com/virus
+http://short.to/trojan
+http://budurl.com/scam
+http://ping.fm/fakepage
+http://randomdomain1234567890.com
+http://login-update-secure.com
+http://account-verify-alert.com
+http://update-now-paypal.com
+http://secure-amazon-check.com
+http://appleid-login-alert.com
+http://microsoft-account-update.com
+http://phishing-login-alert.com
+http://malware-dl.com
+http://virus-checker.net
+http://trojan-remover.org
+http://spyware-fix.info
+http://scam-warning.biz
+http://fake-login-page.com
+http://paypal-security-alert.com
+http://bank-login-update.com
+http://secure-update-login.com
+http://account-verification-alert.com
+http://update-now-amazon.com
+
+## Adversarial/Edge Cases
+http://www.goog1e.com (typosquatting)
+http://secure-login.paypa1.com (homoglyph)
+http://login.paypal.com.evil.com (subdomain attack)
+http://www.paypal.com@malicious.com (userinfo attack)
+http://xn--pple-43d.com (IDN homograph)
+http://www.example.com/%2e%2e/%2e%2e/%2e%2e/etc/passwd (path traversal)
+http://www.safe-site.com?redirect=http://malicious.com (open redirect)
+http://www.safe-site.com#http://malicious.com (fragment attack)
+http://www.safe-site.com:8080 (non-standard port)
+http://www.safe-site.com/very/long/path/with/many/segments/and/parameters?foo=bar&baz=qux
+http://www.safe-site.com/thisisaverylongrandomstringthatisover100characterslongandshouldbetriggeringpatternchecks
+http://www.safe-site.com/wp-admin (WordPress admin path)
+http://www.safe-site.com/wp-content/plugins/malicious-plugin.php
+http://www.safe-site.com/administrator (Joomla admin path)
+http://www.safe-site.com/login.php?user=admin&pass=admin
+http://www.safe-site.com/account/verify?token=abcdef1234567890
+http://www.safe-site.com/ssl/secure/login
+http://www.safe-site.com/www2/login
+http://www.safe-site.com/www3/login 
