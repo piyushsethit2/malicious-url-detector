@@ -2,7 +2,6 @@ com/example/malwaredetector/service/detection/UrlPatternDetectionService.class
 com/example/malwaredetector/service/detection/DomainWhitelistService.class
 com/example/malwaredetector/service/detection/DomainReputationService.class
 com/example/malwaredetector/service/detection/GoogleSafeBrowsingService.class
-com/example/malwaredetector/service/detection/EnhancedContentAnalyzerService$ContentAnalysisResult.class
 com/example/malwaredetector/service/detection/MlMicroserviceDetectionService.class
 com/example/malwaredetector/service/detection/DynamicContentAnalyzerService.class
 com/example/malwaredetector/service/detection/ExternalMlDetectionService.class
