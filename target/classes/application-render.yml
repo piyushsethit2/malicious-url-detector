@@ -37,12 +37,14 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
 
-# Management endpoints for health checks
+# Management endpoints for health checks - PUBLIC for Render
 management:
   endpoints:
     web:
       exposure:
         include: health,info
+      base-path: /actuator
   endpoint:
     health:
-      show-details: when-authorized 
+      show-details: always
+      show-components: always 
