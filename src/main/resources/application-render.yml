@@ -12,12 +12,12 @@ spring:
     password: 
   h2:
     console:
-      enabled: true
-      path: /h2-console
+      enabled: false  # Disable H2 console for faster startup
   jpa:
     hibernate:
       ddl-auto: create-drop
     show-sql: false
+    open-in-view: false  # Disable OSIV for better performance
 
 # External ML API configuration
 ml:
@@ -50,20 +50,23 @@ logging:
     com.example.malwaredetector: INFO
     org.springframework.web: WARN
     org.hibernate: WARN
+    org.springframework.boot.autoconfigure: WARN
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
 
-# Management endpoints for health checks
+# Management endpoints for health checks - simplified
 management:
   endpoints:
     web:
       exposure:
-        include: health,info
+        include: health
       base-path: /actuator
   endpoint:
     health:
-      show-details: always
-      show-components: always
+      show-details: when-authorized
   health:
     defaults:
-      enabled: true 
+      enabled: true
+
+# Optimize startup time
+spring.main.lazy-initialization: true 
