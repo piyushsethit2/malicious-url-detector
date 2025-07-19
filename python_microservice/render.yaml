@@ -3,11 +3,14 @@ services:
     name: python-ml-microservice
     env: python
     plan: free
+    runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python ml_microservice.py
+    startCommand: python3 ml_microservice.py
     envVars:
       - key: PORT
         value: 5002
       - key: HF_MODEL_NAME
         value: distilbert-base-uncased
+      - key: PYTHON_VERSION
+        value: 3.9
     autoDeploy: true 
