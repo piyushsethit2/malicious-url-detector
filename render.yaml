@@ -5,7 +5,8 @@ services:
     plan: free
     dockerfilePath: ./src/main/resources/Dockerfile
     dockerContext: .
-    healthCheckPath: /actuator/health
+    healthCheckPath: /health
+    port: 8080
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: render

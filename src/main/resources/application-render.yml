@@ -27,6 +27,22 @@ ml:
       enabled: true
       api-url: https://api-inference.huggingface.co/models
       model-name: microsoft/DialoGPT-medium
+  # Disable local ML microservice for Render
+  microservice:
+    enabled: false
+    url: http://localhost:5002
+    timeout: 5
+
+# Disable heavy services for Render
+services:
+  dynamic-content-analyzer:
+    enabled: false
+  virus-total:
+    enabled: false
+  google-safe-browsing:
+    enabled: false
+  phish-tank:
+    enabled: false
 
 # Logging configuration for Render
 logging:
@@ -37,7 +53,7 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
 
-# Management endpoints for health checks - PUBLIC for Render
+# Management endpoints for health checks
 management:
   endpoints:
     web:
@@ -47,4 +63,7 @@ management:
   endpoint:
     health:
       show-details: always
-      show-components: always 
+      show-components: always
+  health:
+    defaults:
+      enabled: true 
