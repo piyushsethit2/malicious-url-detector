@@ -204,6 +204,108 @@
             margin: 0;
         }
 
+        .microservices-status {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px solid #e9ecef;
+        }
+
+        .microservices-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .microservices-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .refresh-btn {
+            background: #6c757d;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            background: #5a6268;
+        }
+
+        .microservices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .microservice-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .microservice-card.up {
+            border-color: #28a745;
+            background: linear-gradient(135deg, #f0fff4 0%, #e6ffe6 100%);
+        }
+
+        .microservice-card.down {
+            border-color: #dc3545;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+        }
+
+        .microservice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .microservice-name {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .microservice-status {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .microservice-status.up {
+            background: #28a745;
+            color: white;
+        }
+
+        .microservice-status.down {
+            background: #dc3545;
+            color: white;
+        }
+
+        .microservice-url {
+            font-size: 12px;
+            color: #6c757d;
+            word-break: break-all;
+            margin-bottom: 8px;
+        }
+
+        .microservice-details {
+            font-size: 13px;
+            color: #495057;
+        }
+
         .url-text {
             font-family: 'Courier New', monospace;
             font-size: 14px !important;
@@ -388,6 +490,17 @@
         </div>
         
         <div class="main-content">
+            <!-- Microservices Status Section -->
+            <div class="microservices-status">
+                <div class="microservices-header">
+                    <div class="microservices-title">🔧 Microservices Status</div>
+                    <button class="refresh-btn" onclick="checkMicroservicesStatus()">🔄 Refresh</button>
+                </div>
+                <div id="microservicesGrid" class="microservices-grid">
+                    <div class="loading">Loading microservices status...</div>
+                </div>
+            </div>
+
             <div class="input-section">
         <div class="input-group">
             <input type="url" id="urlInput" placeholder="Enter URL to scan (e.g., https://example.com)" required>
@@ -541,6 +654,97 @@
             if (e.key === 'Enter') {
                 scanUrl();
             }
+        });
+
+        // Microservices status functions
+        async function checkMicroservicesStatus() {
+            const grid = document.getElementById('microservicesGrid');
+            grid.innerHTML = '<div class="loading">Checking microservices status...</div>';
+            
+            try {
+                const response = await fetch('/api/microservices/status');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const status = await response.json();
+                displayMicroservicesStatus(status);
+                
+            } catch (error) {
+                grid.innerHTML = `
+                    <div class="microservice-card down">
+                        <div class="microservice-header">
+                            <div class="microservice-name">Status Check Failed</div>
+                            <div class="microservice-status down">Error</div>
+                        </div>
+                        <div class="microservice-details">Error: ${error.message}</div>
+                    </div>
+                `;
+            }
+        }
+
+        function displayMicroservicesStatus(status) {
+            const grid = document.getElementById('microservicesGrid');
+            
+            if (status.overall_status === 'ERROR') {
+                grid.innerHTML = `
+                    <div class="microservice-card down">
+                        <div class="microservice-header">
+                            <div class="microservice-name">Status Check Error</div>
+                            <div class="microservice-status down">Error</div>
+                        </div>
+                        <div class="microservice-details">${status.error}</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            
+            // Display overall status
+            html += `
+                <div class="microservice-card ${status.overall_status === 'ALL_UP' ? 'up' : 'down'}">
+                    <div class="microservice-header">
+                        <div class="microservice-name">Overall Status</div>
+                        <div class="microservice-status ${status.overall_status === 'ALL_UP' ? 'up' : 'down'}">
+                            ${status.up_count}/${status.total_count} UP
+                        </div>
+                    </div>
+                    <div class="microservice-details">
+                        Status: ${status.overall_status}<br>
+                        Last checked: ${new Date(status.timestamp).toLocaleString()}
+                    </div>
+                </div>
+            `;
+            
+            // Display individual microservices
+            for (const [name, ms] of Object.entries(status.microservices)) {
+                const isUp = ms.status === 'UP';
+                const displayName = name.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                
+                html += `
+                    <div class="microservice-card ${isUp ? 'up' : 'down'}">
+                        <div class="microservice-header">
+                            <div class="microservice-name">${displayName}</div>
+                            <div class="microservice-status ${isUp ? 'up' : 'down'}">${ms.status}</div>
+                        </div>
+                        <div class="microservice-url">${ms.url}</div>
+                        <div class="microservice-details">
+                            ${isUp ? 
+                                `Response: ${ms.response || 'OK'}<br>HTTP: ${ms.httpStatus}` : 
+                                `Error: ${ms.error}`
+                            }
+                        </div>
+                    </div>
+                `;
+            }
+            
+            grid.innerHTML = html;
+        }
+
+        // Check microservices status on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkMicroservicesStatus();
         });
     </script>
 </body>
