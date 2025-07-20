@@ -46,7 +46,7 @@ ml:
       timeout: 10000
   ml-microservice:
     enabled: true
-    url: ${ML_MICROSERVICE_3_URL:https://ml-microservice-nn4p.onrender.com}
+    url: ${ML_MICROSERVICE_3_URL:https://ml-microservice.onrender.com}
     timeout: 10000
 
 # Disable heavy services that require API keys
