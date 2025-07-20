@@ -39,15 +39,15 @@ ml:
   microservice:
     enabled: true
     url: ${ML_MICROSERVICE_URL:https://python-ml-microservice.onrender.com}
-    timeout: 10000
+    timeout: 30000
   python-app:
     microservice:
       url: ${PYTHON_MICROSERVICE_URL:https://python-app-microservice.onrender.com}
-      timeout: 10000
+      timeout: 30000
   ml-microservice:
     enabled: true
     url: ${ML_MICROSERVICE_3_URL:https://ml-microservice-nn4p.onrender.com}
-    timeout: 10000
+    timeout: 30000
 
 # Disable heavy services that require API keys
 virus-total:

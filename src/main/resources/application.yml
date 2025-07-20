@@ -28,12 +28,12 @@ google:
 malware:
   detection:
     enabled: true
-    timeout: 10000
+    timeout: 30000
     max-redirects: 5
 
 # ML Microservice Configuration
 ml:
   microservice:
     url: http://localhost:5002
-    timeout: 10
+    timeout: 30
     enabled: true
