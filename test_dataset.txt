@@ -1,0 +1,117 @@
+# Malicious URL Detection Test Dataset
+# This dataset contains various types of URLs for comprehensive testing
+
+# Safe URLs (should be classified as safe)
+https://google.com
+https://www.facebook.com
+https://github.com
+https://stackoverflow.com
+https://amazon.com
+https://microsoft.com
+https://apple.com
+https://netflix.com
+https://spotify.com
+https://linkedin.com
+
+# Suspicious URLs (should be flagged)
+https://malware-test.com/virus.exe
+https://phishing-site.com/login
+https://suspicious-domain-12345.com
+https://bit.ly/suspicious-link
+https://goo.gl/malware
+https://tinyurl.com/fake-bank
+https://10.0.0.1/malware
+https://192.168.1.1/hack
+https://127.0.0.1/backdoor
+https://malware.com/download.exe
+https://virus.com/trojan.bat
+https://spyware.com/keylogger.js
+https://phishing.com/fake-login
+https://scam.com/fake-payment
+https://fake.com/credential-stealer
+
+# High-risk URLs (should be flagged with high confidence)
+https://malware-distribution.com/virus.exe
+https://phishing-bank.com/secure-login
+https://trojan-download.com/backdoor.exe
+https://spyware-collection.com/keylogger.js
+https://ransomware-site.com/encrypt.exe
+https://adware-distribution.com/popup.js
+https://botnet-command.com/control.exe
+https://exploit-kit.com/payload.exe
+https://crypto-miner.com/miner.exe
+https://ddos-tool.com/attack.exe
+
+# URL shortening services (should be flagged)
+https://bit.ly/3abc123
+https://goo.gl/xyz789
+https://tinyurl.com/def456
+https://is.gd/ghi789
+https://t.co/jkl012
+https://fb.me/mno345
+https://ow.ly/pqr678
+https://su.pr/stu901
+https://twurl.nl/vwx234
+https://snipurl.com/yz5678
+
+# Private IP addresses (should be flagged)
+https://10.0.0.1/admin
+https://172.16.0.1/config
+https://192.168.0.1/setup
+https://127.0.0.1/local
+https://169.254.0.1/auto
+https://224.0.0.1/multicast
+https://240.0.0.1/reserved
+
+# Suspicious file extensions (should be flagged)
+https://example.com/file.exe
+https://example.com/script.bat
+https://example.com/command.cmd
+https://example.com/program.com
+https://example.com/screen.pif
+https://example.com/script.scr
+https://example.com/virus.vbs
+https://example.com/malware.js
+https://example.com/trojan.jar
+https://example.com/installer.msi
+https://example.com/app.dmg
+https://example.com/package.deb
+https://example.com/rpm.package
+https://example.com/android.apk
+https://example.com/ios.ipa
+
+# Obfuscated URLs (should be flagged)
+https://example.com/redirect?url=base64encoded
+https://example.com/redirect?url=%68%74%74%70%73
+https://example.com/redirect?url=&#x68;&#x74;&#x74;&#x70;&#x73;
+https://example.com/redirect?url=\x68\x74\x74\x70\x73
+https://example.com/redirect?url=\u0068\u0074\u0074\u0070\u0073
+
+# Legitimate but potentially suspicious keywords
+https://example.com/login
+https://example.com/signin
+https://example.com/secure
+https://example.com/verify
+https://example.com/account
+https://example.com/bank
+https://example.com/paypal
+https://example.com/ebay
+https://example.com/update
+https://example.com/confirm
+https://example.com/reset
+https://example.com/password
+https://example.com/credential
+https://example.com/invoice
+https://example.com/payment
+
+# Random-looking domains (should be flagged)
+https://a1b2c3d4e5f6.com
+https://random123456789.com
+https://suspicious-very-long-domain-name-that-looks-fake.com
+https://malware-2024-07-20.com
+https://phishing-site-12345.com
+https://fake-bank-2024.com
+https://scam-payment-123.com
+https://virus-download-456.com
+https://trojan-backdoor-789.com
+https://spyware-keylogger-012.com 
