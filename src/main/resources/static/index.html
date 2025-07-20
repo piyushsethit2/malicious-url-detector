@@ -196,6 +196,21 @@
             color: #212529;
             font-size: 16px;
             font-weight: 500;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .url-text {
+            font-family: 'Courier New', monospace;
+            font-size: 14px !important;
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
         }
 
         .detection-methods {
@@ -224,6 +239,9 @@
             border-radius: 8px;
             border: 1px solid #dee2e6;
             transition: all 0.3s ease;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
         }
 
         .method-card:hover {
@@ -251,11 +269,17 @@
             color: #6c757d;
             font-size: 14px;
             margin-bottom: 8px;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            line-height: 1.4;
         }
 
         .method-confidence {
             font-weight: 600;
             color: #667eea;
+            margin-top: auto;
+            padding-top: 8px;
         }
 
         .loading {
@@ -306,13 +330,17 @@
             border-radius: 5px;
             border-left: 3px solid #fc8181;
             color: #2d3748;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            line-height: 1.4;
         }
 
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
                 border-radius: 15px;
-        }
+            }
 
             .main-content {
                 padding: 20px;
@@ -324,10 +352,30 @@
 
             .info-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .method-grid {
                 grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .info-card p {
+                font-size: 14px;
+            }
+
+            .url-text {
+                font-size: 12px !important;
+                padding: 6px;
+            }
+
+            .method-details {
+                font-size: 13px;
+            }
+
+            .method-card {
+                min-height: 100px;
+                padding: 12px;
             }
         }
     </style>
@@ -427,7 +475,7 @@
                     <div class="info-grid">
                         <div class="info-card">
                             <h4>URL</h4>
-                            <p>${result.url}</p>
+                            <p class="url-text">${result.url}</p>
                         </div>
                         <div class="info-card">
                             <h4>Confidence Score</h4>
